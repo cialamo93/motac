@@ -1,0 +1,884 @@
+/*
+ * ESTILOS PARA EL NAVBAR (Header)
+ * Esto replica el "look" de Elementor
+ */
+
+/* 1. Variables */
+:root {
+    --color-primario: #1cadd5;
+    --color-texto-menu: #334155;
+    --color-titulos: #1e293b;
+    --fuente-principal: 'Lato', sans-serif;
+}
+
+/* 2. Navbar */
+#main-navbar {
+    height: 100px;
+    text-transform: uppercase;
+    transform: translateZ(0);
+    z-index: 1050;
+}
+
+/* 3. Alineación correcta (igual a Elementor) */
+#main-navbar .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+/* 4. Links iguales al original */
+#main-navbar .navbar-nav .nav-link {
+    font-family: var(--fuente-principal);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #707070;
+
+    border-style: dotted;
+    border-width: 0;
+    border-color: rgba(255, 255, 255, .21);
+
+    padding: 0 25px;
+
+    display: block; /* FUNDAMENTAL */
+    line-height: 26.4px;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* Hover + activo */
+#main-navbar .navbar-nav .nav-link:hover,
+#main-navbar .navbar-nav .nav-link.active {
+    color: var(--color-primario);
+}
+
+/* Botón */
+.btn-primary {
+    --bs-btn-bg: var(--color-primario);
+    --bs-btn-border-color: var(--color-primario);
+    --bs-btn-hover-bg: #035cb4;
+    --bs-btn-hover-border-color: #035cb4;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+/*
+ * ESTILOS PARA EL MENÚ OFFCANVAS (MÓVIL) - CORREGIDO
+ */
+
+/* 1. Links principales del menú móvil */
+.mobile-nav-links .nav-item {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .mobile-nav-links .nav-link {
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-texto-menu);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .mobile-nav-links .nav-link.active,
+  .mobile-nav-links .nav-link:hover {
+    color: var(--color-primario);
+  }
+  
+  /* 2. Estilo para el link que abre el acordeón */
+  .mobile-dropdown-toggle {
+    /* Usamos flexbox para alinear el texto y la flecha */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* 3. La flecha (creada con CSS) */
+  .mobile-dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    border-right: 2px solid var(--color-texto-menu);
+    border-bottom: 2px solid var(--color-texto-menu);
+    
+    /* Rotación inicial (apuntando hacia abajo) */
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* 4. Rotación de la flecha cuando el menú está abierto */
+  .mobile-dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(-135deg); /* Apunta hacia arriba */
+    margin-top: 4px; /* Pequeño ajuste visual */
+  }
+  
+  /* 5. El submenú ("con un color distinto") */
+  .mobile-submenu {
+    /* Fondo más suave para diferenciarlo */
+    background-color: #f8f9fa; 
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  
+  .mobile-submenu .nav-link {
+    /* Letra más pequeña y con el color azul */
+    color: var(--color-primario);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  
+  .mobile-submenu .nav-link:hover {
+    /* Un azul más oscuro al pasar el mouse */
+    color: #035cb4; 
+  }
+
+
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  /*
+ * ESTILOS PARA EL HERO CAROUSEL (Versión Corregida)
+ */
+
+#hero-carousel .carousel-item {
+    /* * 1. ALTURA (EL "ZOOM")
+     * Aumentamos la altura para ese look "Hero" más grande. 
+     * 80vh = 80% de la altura de la ventana. Ajusta este valor si es necesario.
+     */
+    height: 80vh; 
+    min-height: 600px; /* Un alto mínimo para pantallas más bajas */
+  }
+  
+  #hero-carousel .carousel-item img {
+    /* * Esta es la propiedad clave del "zoom".
+     * 'cover' = Rellena el contenedor cortando lo que sobre.
+     */
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  #hero-carousel .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* * Este es el overlay. 
+     * '0.15' es 15% opaco (muy poco).
+     * Sube este valor (ej. 0.2) o bájalo (ej. 0.1) si lo necesitas.
+     */
+    background-color: rgba(0, 0, 0, 0.35); 
+    
+    /* Pone el overlay encima de la imagen (z-index: 1) */
+    z-index: 1;
+  }
+ 
+
+ #hero-carousel .carousel-caption {
+  /* 1. Centrado (Vertical y Horizontal) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* 2. Resetea la posición inferior de Bootstrap */
+  bottom: auto; 
+  
+  /* 3. Quita el fondo opaco */
+  background-color: transparent;
+  padding: 0; /* Resetea el padding de la caja */
+  z-index: 2;
+  width: 70%;
+  /* 6. Centra el <h5> dentro de esta nueva caja */
+  text-align: center;
+}
+
+/* * Estilo del texto (blanco y con sombra)
+ */
+#hero-carousel .carousel-caption h5 {
+  color: #fff;
+  font-size: 3.5rem; /* 40px (ajusta si es necesario) */
+  font-weight: 600;
+  text-transform: uppercase;
+  }
+  
+  /* * 2. INDICADORES (LOS CÍRCULOS)
+   * Aquí anulamos los rectángulos de Bootstrap.
+   */
+  
+  .carousel-indicators button {
+    width: 30px;          /* Ancho del círculo */
+    height: 30px;         /* Alto del círculo */
+    border-radius: 90%;   /* ¡Esto los hace redondos! */
+    
+    /* Reseteos para anular Bootstrap */
+    margin: 0 6px;        /* Espacio entre los círculos */
+    border: none;
+    background-color: #fff; /* Color de los círculos inactivos */
+    opacity: 0.7;
+  }
+  
+  .carousel-indicators .active {
+    /* * El círculo de la imagen que se está mostrando.
+     * Usamos el color primario que definimos en el CSS del header.
+     */
+    background-color: var(--color-primario); 
+    opacity: 1;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    /* opacity: .5; */
+    transition: opacity .6s ease;
+   }
+
+   /*
+ * ESTILOS PARA SECCIÓN "QUIÉNES SOMOS"
+ */
+
+.section-bg-light {
+    /* * Este es el color de fondo gris pálido que usaba Elementor
+     * (Definido en tu CSS original como --ast-global-color-4) 
+     */
+    background-color: #f9fafb; 
+  }
+  
+  
+  #quienes-somos .lead {
+    /* * Color de párrafo (Definido en tu CSS original como --color-texto-menu)
+     */
+    color: var(--color-texto-menu, #334155);
+  }
+
+  #quienes-somos {
+    /* * Prueba con 6rem (96px). 
+     * El original probablemente usa 100px, así que 6rem
+     * es un valor muy cercano. Ajusta si es necesario.
+     */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  /*
+ * ESTILOS PARA SECCIÓN "ÁREAS DE NEGOCIO"
+ */
+
+  #areas-negocio .card-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  
+  /* * ESTILO PARA LAS CARDS CLICKEABLES
+   */
+  .card-link {
+    text-decoration: none; /* Quita el subrayado azul del enlace */
+    color: var(--color-texto-menu, #334155); /* Hereda el color de texto normal */
+    display: block; /* Asegura que el enlace ocupe todo el espacio de la columna */
+    height: 100%;
+    transition: transform 0.2s ease-in-out; /* Animación suave para el "levantamiento" */
+  }
+  
+  .card-link:hover {
+    color: var(--color-texto-menu, #334155); /* Mantiene el color del texto */
+  }
+  
+  .card-link .card {
+    /* La tarjeta en sí no necesita sombra por defecto */
+    box-shadow: none;
+    border: 1px solid #eee; /* Un borde sutil como en el original */
+    transition: box-shadow 0.2s ease-in-out; /* Animación suave para la sombra */
+  }
+  
+ /*
+ * ESTILOS PARA SECCIÓN "CLIENTES" (Versión Corregida)
+ */
+
+/* 1. Fondo de la Sección (Blanco) y Contenedor del Cuadro Azul */
+#clientes {
+    background-color: #fff; /* Fondo blanco (como pediste) */
+    position: relative;     /* Necesario para el cuadro azul */
+    overflow: hidden;       /* Evita que el cuadro se salga de la pantalla */
+  }
+  
+  /* 2. EL CUADRADO CELESTE DECORATIVO (que estaba bien) */
+  #clientes::before {
+    content: '';
+    position: absolute;
+    z-index: 1; /* Detrás del contenido, sobre el fondo blanco */
+    
+    /* Usa el color primario que definimos en el header */
+    background-color: #b5e3ee;    ; 
+    
+    /* Dimensiones (Según tu descripción) */
+    left: 20%;  /* Empieza al 20% de la pantalla */
+    right: 0;     /* Llega hasta el borde derecho */
+    width: 80%;
+    
+    /* Centrado vertical (ajusta el height si es necesario) */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%; 
+      }
+  
+  /* 3. Contenido (delante del cuadro azul) */
+  #clientes .container {
+    position: relative;
+    z-index: 2; /* Pone las tarjetas ADELANTE del cuadro azul */
+  }
+  
+  /* 4. Estilos Comunes (El "contenedor" clickeable) */
+  .clickable-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* * CORRECCIÓN 1: AUMENTAR ALTURA
+     * Cambiado de 200px a 350px. 
+     * Esta es la medida que debes ajustar (ej: 300px, 400px) 
+     * hasta que tu cliente vea la foto tan "entera" como quiera.
+     */
+    min-height: 350px; 
+    
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;  
+    position: relative;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+  }
+  
+  /* 5. Las Fotos Específicas (Esto sigue igual) */
+  .box-privado {
+    background-image: url('../img/sector-privado.webp'); 
+  }
+  .box-publico {
+    background-image: url('../img/sector-publico.webp');
+  }
+  
+  /* 6. Overlay (Invertido - claro por defecto, oscuro en hover) */
+  .clickable-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0); /* Transparente por defecto */
+  }
+  
+  /* 7. Efecto Hover (Aparece el overlay "poquito opaco") */
+  .clickable-box:hover::before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 8. Título (encima de todo) */
+  .clickable-box h3 {
+    position: relative;
+    z-index: 2; 
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  /*
+ * ESTILOS PARA EL FOOTER
+ */
+
+.footer-bg {
+    /* Este es el color de fondo oscuro del footer original */
+    background-color: #fff;
+    color: #8c8c8c;
+  }
+  
+  .footer-bg h5 {
+    color: #8c8c8c;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Estilos para todos los links y texto del footer */
+  .footer-bg p, .footer-link {
+    color: #8c8c8c;
+    text-decoration: none;
+    font-size: 0.9rem; /* 14.4px */
+  }
+  
+  .footer-link {
+    transition: color 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--color-primario, #046bd2); /* Color azul al pasar el mouse */
+  }
+  
+  /* Estilos para los iconos de redes sociales */
+  .footer-social-icons a {
+    font-size: 1.5rem; /* 24px */
+    margin-right: 1.2rem; /* Espacio entre iconos */
+  }
+  
+  /* * ESTILOS PARA LA BARRA DE COPYRIGHT
+   */
+  
+  .copyright-bg {
+    /* Este es el color de fondo de la barra de copyright */
+    background-color: var(--color-copyright-bg, #525252);
+    color: #ccc; /* Color de texto gris claro */
+  }
+  
+  .copyright-bg a {
+    color: #fff; /* El enlace a Rocket Media es blanco */
+    text-decoration: none;
+  }
+  
+  .copyright-bg a:hover {
+    text-decoration: underline;
+  }
+
+/*
+ * ESTILOS PARA PÁGINA "QUIÉNES SOMOS" (Corregido)
+ */
+
+/* 1. Estilo del Hero Banner (SIN OVERLAY) */
+.page-hero-banner {
+    /* * Esta es la ruta de la foto que me diste */
+    background-image: url('../img/BNA-QS.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    min-height: 350px; /* Ajusta esta altura a tu gusto */
+  }
+  
+  /* 2. Contenido "Quiénes Somos" (fondo gris) */
+  .section-bg-light {
+    background-color: #f9fafb; /* El mismo gris de la home */
+  }
+  
+  /* 3. Título (AHORA DENTRO de la sección de contenido) */
+  #about-content h2 {
+    color: var(--color-titulos, #1e293b);
+    font-weight: 700;
+  }
+  
+  #about-content p {
+    color: var(--color-texto-menu, #334155);
+    font-size: 1.1rem; /* Texto un poco más grande */
+    line-height: 1.7;
+  }
+  
+  /* * 4. Sección Misión/Visión 
+   * (Este CSS ya estaba bien y no cambia) 
+   */
+  .section-bg-dark-texture {
+    background-image: url('../img/medico-330.webp');
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 6rem;
+  padding-bottom: 6rem;
+  }
+  .section-bg-dark-texture::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #f5f5f5;
+    opacity: 0.9;
+  }
+  #mision-vision .container {
+    position: relative;
+    z-index: 2;
+  }
+  #mision-vision h3 {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .text-box {
+    background-color: #fff;
+    color: var(--color-texto-menu, #334155);
+    border-radius: 0.25rem;
+    min-height: 220px; 
+  }
+
+  /*
+ * ESTILOS PARA PÁGINA "INSUMOS DESECHABLES"
+ */
+
+/* 1. Imagen del Banner */
+.hero-insumos {
+    /* * NOTA: El banner original (5f44868) tenía un overlay.
+     * Si esta página TAMBIÉN debe tenerlo, descomenta las 
+     * líneas de 'position' y '::before' de abajo.
+     */
+    
+    /* * REEMPLAZA ESTO con la imagen de fondo para esta página */
+    background-image: url('../img/banner-productos-insumos.jpg');
+    min-height: 450px;
+    position: relative; /* Descomentar para overlay */
+  }
+  
+  /* .hero-insumos::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  */
+
+  /*
+ * ESTILOS PARA PÁGINA "osteosintesis"
+ */
+
+/* 1. Imagen del Banner */
+.hero-osteosintesis {
+  /* * NOTA: El banner original (5f44868) tenía un overlay.
+   * Si esta página TAMBIÉN debe tenerlo, descomenta las 
+   * líneas de 'position' y '::before' de abajo.
+   */
+  
+  /* * REEMPLAZA ESTO con la imagen de fondo para esta página */
+  background-image: url('../img/osteosintesis.jpg');
+  min-height: 450px;
+  position: relative; /* Descomentar para overlay */
+}
+
+/* .hero-osteosintesis::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+*/
+
+/*
+ * ESTILOS PARA PÁGINA "PROTESIS"
+ */
+
+/* 1. Imagen del Banner */
+.hero-protesis {
+  /* * NOTA: El banner original (5f44868) tenía un overlay.
+   * Si esta página TAMBIÉN debe tenerlo, descomenta las 
+   * líneas de 'position' y '::before' de abajo.
+   */
+  
+  /* * REEMPLAZA ESTO con la imagen de fondo para esta página */
+  background-image: url('../img/banner-productos-prote.jpg');
+  min-height: 450px;
+  position: relative; /* Descomentar para overlay */
+}
+
+/* .hero-protesis::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+*/
+  
+  
+  /* 2. Estilos para la nueva sección "Encuéntralos en" */
+  .find-us-text p {
+    color: var(--color-texto-menu, #334155);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .find-us-social-icons a {
+    color: var(--color-primario, #046bd2); /* Iconos en color azul */
+    font-size: 1.8rem; /* Tamaño de los iconos */
+    margin-left: 0.8rem; /* Espacio entre iconos */
+    transition: color 0.2s ease;
+  }
+  
+  .find-us-social-icons a:hover {
+    color: var(--color-texto-menu, #334155); /* Color al pasar el mouse */
+  }
+
+  /*
+ * ESTILOS PARA PÁGINA "SECTOR PRIVADO"
+ */
+
+/* 1. Imagen del Banner */
+.hero-privado {
+  /* * NOTA: Reemplaza esto con la imagen de fondo correcta para este banner */
+  background-image: url('../img/banner-privado.jpg');
+  
+  /* El código de Elementor que pegaste SÍ incluye un overlay */
+  position: relative;
+}
+
+/* 2. Overlay del Banner */
+.hero-privado::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro (ajusta si es necesario) */
+}
+
+.page-hero-banner-clientes {
+  background-size: cover;
+  background-position: center;
+
+  /* * AUMENTA ESTE VALOR
+   * Si dice 350px, prueba con 400px o 450px.
+   * Ajústalo hasta que se vea idéntico al original.
+   */
+  min-height: 450px; 
+}
+
+/*
+ * ESTILOS PARA PÁGINA "CONTACTO"
+ */
+
+/* 1. Imagen del Banner */
+.hero-contacto {
+  /* * NOTA: Reemplaza esto con la imagen de fondo correcta para este banner */
+  background-image: url('../img/contacto.webp');
+  position: relative;
+}
+
+/* 2. Overlay del Banner */
+.hero-contacto::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro (ajusta si es necesario) */
+}
+
+/* 3. Estilos del Formulario */
+#contact-content h2,
+#contact-content h3 {
+  color: var(--color-titulos, #1e293b);
+  font-weight: 700;
+}
+
+/* Ajuste para que los inputs se parezcan a Elementor */
+#contact-content .form-control-lg {
+  font-size: 1rem; /* El 'lg' de Elementor es más cercano a 1rem */
+  padding: .8rem 1.1rem;
+}
+
+#contact-content .btn-lg {
+  font-weight: 700;
+  padding: .8rem 1.5rem;
+}
+
+/*
+ * B. CORRECCIÓN ESTILO DROPDOWN (ESCRITORIO)
+ */
+
+/* Solo aplica esto en pantallas grandes (lg), no en el offcanvas móvil */
+/*
+ * ---------------------------------------------
+ * ARREGLOS FINALES DEL NAVBAR (Hover + Posición + Separadores)
+ * ---------------------------------------------
+ */
+
+/*
+ * ---------------------------------------------
+ * ARREGLOS FINALES DEL NAVBAR (Hover + Posición + Separadores)
+ * ---------------------------------------------
+ */
+
+/* Solo aplica esto en pantallas grandes (lg) */
+@media (min-width: 992px) { 
+  
+  /* B. Muestra el menú al pasar el mouse (hover) */
+  #main-navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+
+  /* B. Estilo de "cuadrado" (no "burbuja") */
+  #main-navbar .dropdown-menu {
+    
+    top: 100%; 
+    z-index: 2000;
+    border-radius: 0;        
+    border: none;            
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  /* A. Añade la línea de separación */
+  #main-navbar .dropdown-menu > li {
+    border-bottom: 1px solid #f0f0f0; /* La línea separadora */
+  }
+
+  #main-navbar .dropdown-menu > li:last-child {
+    border-bottom: none; /* El último no lleva línea */
+  }
+
+  /* A. Ajusta el padding del item */
+  #main-navbar .dropdown-item {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* A. Arregla el hover del item */
+  #main-navbar .dropdown-item:hover {
+     color: var(--color-primario);
+     background-color: #f8f9fa; 
+  }
+}
+
+/* C. Hacer el contenido del navbar más angosto */
+@media (min-width: 1200px) {
+  #main-navbar .container {
+    /* El "boxed" de Elementor suele ser de 1200px o 1140px.
+       Bootstrap por defecto es más ancho. Esto lo "aprieta". */
+    max-width: 1200px; 
+  }
+}
+
+.areaTitle {
+  color:#45c0ef;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.areaCard {
+  border: none !important;
+  padding: 0;
+}
+
+/* 1. Aumenta el espacio (padding) de la imagen */
+.areaCard .card-img-top {
+  padding: 2.5rem; /* El 'p-3' que tenías era 1rem. Esto es mucho más. */
+}
+
+/* 2. Aumenta el espacio (padding) del cuerpo de la tarjeta */
+.areaCard .card-body {
+  padding: 2rem; /* El 'p-3' por defecto era 1rem. */
+  padding-top: 0; /* Quita el padding de arriba para que se pegue a la imagen */
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #45c0ef;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.contactBtn {
+  /* Colores (usando tu variable y el hover que ya tenías) */
+  --bs-btn-bg: var(--color-primario); 
+  --bs-btn-border-color: var(--color-primario);
+  --bs-btn-hover-bg: #035cb4;
+  --bs-btn-hover-border-color: #035cb4;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 0; /* Original: 4px */
+  padding: 8px 22px;  /* Original: 10px 20px */
+  font-size: 14px; /* Igual que los links del menú */
+  letter-spacing: 1.3px
+}
+
+.contactBtn svg {
+  vertical-align: -2px;
+}
+.contactBtn:hover {
+background-color: var(--color-primario);
+color: #fff;
+border-color: var(--color-primario);
+box-shadow: none;
+transform: none;
+}
+
+/*
+ * PREPARACIÓN PARA ANIMACIÓN EN SCROLL (Corregido)
+ */
+
+/* Oculta los elementos ANTES de que el JS los active */
+.wow {
+  visibility: hidden;
+}
