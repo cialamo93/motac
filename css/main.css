@@ -13,6 +13,8 @@
 
 /* 2. Navbar */
 #main-navbar {
+  background-color: #ffffff !important;
+  position: relative;
     height: 100px;
     text-transform: uppercase;
     transform: translateZ(0);
@@ -68,75 +70,140 @@
 /*
  * ESTILOS PARA EL MENÚ OFFCANVAS (MÓVIL) - CORREGIDO
  */
-
-/* 1. Links principales del menú móvil */
-.mobile-nav-links .nav-item {
+/* ============================================
+   🔵 1. Links principales del menú móvil
+   ============================================ */
+   .mobile-nav-links .nav-item {
     border-bottom: 1px solid #eee;
   }
   
   .mobile-nav-links .nav-link {
     font-family: var(--fuente-principal);
     font-weight: 700;
-    font-size: 1rem;
-    color: var(--color-texto-menu);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 1rem 1rem !important;
+    width: 100%;
+    display: block;
   }
   
-  .mobile-nav-links .nav-link.active,
-  .mobile-nav-links .nav-link:hover {
-    color: var(--color-primario);
+  /* Estado seguro para evitar texto invisible */
+  .mobile-nav-links .nav-link:active,
+  .mobile-nav-links .nav-link:focus {
+    color: #fff !important;
+    background-color: rgba(255,255,255,0.12) !important;
   }
   
-  /* 2. Estilo para el link que abre el acordeón */
+  /* ============================================
+     🔵 2. Link que abre los dropdowns
+     ============================================ */
   .mobile-dropdown-toggle {
-    /* Usamos flexbox para alinear el texto y la flecha */
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  /* 3. La flecha (creada con CSS) */
+  /* Flecha */
   .mobile-dropdown-toggle::after {
     content: '';
     display: inline-block;
+    margin-left: 4px;
+    margin-bottom: 2px;
     width: 0.6em;
     height: 0.6em;
     border-right: 2px solid var(--color-texto-menu);
     border-bottom: 2px solid var(--color-texto-menu);
-    
-    /* Rotación inicial (apuntando hacia abajo) */
     transform: rotate(45deg);
     transition: transform 0.2s ease-in-out;
   }
   
-  /* 4. Rotación de la flecha cuando el menú está abierto */
+  /* Flecha girada */
   .mobile-dropdown-toggle[aria-expanded="true"]::after {
-    transform: rotate(-135deg); /* Apunta hacia arriba */
-    margin-top: 4px; /* Pequeño ajuste visual */
+    transform: rotate(-135deg);
+    margin-top: 4px;
   }
   
-  /* 5. El submenú ("con un color distinto") */
+  /* ============================================
+     🔵 3. Submenú
+     ============================================ */
   .mobile-submenu {
-    /* Fondo más suave para diferenciarlo */
-    background-color: #f8f9fa; 
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    background-color: #f8f9fa;
+    padding: .5rem 0;
+    width: 100%;
   }
   
   .mobile-submenu .nav-link {
-    /* Letra más pequeña y con el color azul */
-    color: var(--color-primario);
+    color: #606060;
     font-weight: 600;
-    font-size: 0.9rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    font-size: 16px;
+    padding: .5rem 0.5rem !important;
+    width: 100%;
   }
   
-  .mobile-submenu .nav-link:hover {
-    /* Un azul más oscuro al pasar el mouse */
-    color: #035cb4; 
+  /* ============================================
+     🔵 4. Offcanvas (color + z-index)
+     ============================================ */
+  .offcanvas {
+    background-color: #1cadd5;
+    z-index: 2000;
   }
+  
+  .offcanvas-backdrop {
+    z-index: 1990;
+  }
+  
+  /* ============================================
+     🔵 5. Ancho + estilo del panel (NO full width)
+     ============================================ */
+  .offcanvas-start {
+    width: 50% !important;      /* tu valor actual */
+    max-width: 100% !important; /* seguridad */
+    left: 0;
+  }
+  
+  /* ============================================
+     🔵 6. Limpiar padding interno que causaba "cuadrado"
+     ============================================ */
+  .offcanvas,
+  .offcanvas-body,
+  .offcanvas-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .offcanvas-header {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* ============================================
+     🔵 7. UL full width sin márgenes
+     ============================================ */
+  .mobile-nav-links {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+  
+  /* ============================================
+     🔵 8. Garantizar que los collapse ocupen todo el ancho
+     ============================================ */
+  .collapse {
+    width: 100%;
+  }
+  
+
+
+  /* Evita que el enlace móvil cambie de color al presionar */
+/* .offcanvas-body .nav-link,
+.offcanvas-body .nav-link:active,
+.offcanvas-body .nav-link:focus,
+.offcanvas-body .nav-link.show {
+  color: white !important;   o el color que uses
+  background: transparent !important;
+} */
 
 
 .lato-thin {
@@ -232,7 +299,7 @@
      * '0.15' es 15% opaco (muy poco).
      * Sube este valor (ej. 0.2) o bájalo (ej. 0.1) si lo necesitas.
      */
-    background-color: rgba(0, 0, 0, 0.35); 
+    background-color: rgba(0, 0, 0, 0.15); 
     
     /* Pone el overlay encima de la imagen (z-index: 1) */
     z-index: 1;
@@ -322,10 +389,16 @@
   }
   
   
-  #quienes-somos .lead {
+  .lead {
     /* * Color de párrafo (Definido en tu CSS original como --color-texto-menu)
      */
     color: var(--color-texto-menu, #334155);
+  }
+
+  #about-content .lead {
+    font-weight: 400;
+    font-size: 15px;
+    color: #606060;
   }
 
   #quienes-somos {
@@ -487,9 +560,13 @@
   .footer-link {
     transition: color 0.2s ease;
   }
+
+  .footerColor {
+    color: #45c0ef;
+  }
   
   .footer-link:hover {
-    color: var(--color-primario, #046bd2); /* Color azul al pasar el mouse */
+    color: var(--color-primario, #152636); /* Color azul al pasar el mouse */
   }
   
   /* Estilos para los iconos de redes sociales */
@@ -522,24 +599,28 @@
 
 /* 1. Estilo del Hero Banner (SIN OVERLAY) */
 .page-hero-banner {
-    /* * Esta es la ruta de la foto que me diste */
-    background-image: url('../img/BNA-QS.jpg'); 
-    
-    background-size: cover;
-    background-position: center;
-    min-height: 350px; /* Ajusta esta altura a tu gusto */
-  }
+  background-image: url('../img/BNA-QS.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 350px;          /* controla el área visible */
+  position: relative;     
+  overflow: hidden;       /* evita que el overlay se extienda más abajo */
+}
+
+.page-hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
   
   /* 2. Contenido "Quiénes Somos" (fondo gris) */
   .section-bg-light {
     background-color: #f9fafb; /* El mismo gris de la home */
   }
   
-  /* 3. Título (AHORA DENTRO de la sección de contenido) */
-  #about-content h2 {
-    color: var(--color-titulos, #1e293b);
-    font-weight: 700;
-  }
   
   #about-content p {
     color: var(--color-texto-menu, #334155);
@@ -733,12 +814,6 @@
   background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro (ajusta si es necesario) */
 }
 
-/* 3. Estilos del Formulario */
-#contact-content h2,
-#contact-content h3 {
-  color: var(--color-titulos, #1e293b);
-  font-weight: 700;
-}
 
 /* Ajuste para que los inputs se parezcan a Elementor */
 #contact-content .form-control-lg {
@@ -882,3 +957,22 @@ transform: none;
 .wow {
   visibility: hidden;
 }
+
+@media (max-width: 768px) {
+
+  /* Saca cualquier alto impuesto por Bootstrap */
+  #hero-carousel .carousel-item {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* Ajusta la imagen al tamaño real */
+  #hero-carousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+
