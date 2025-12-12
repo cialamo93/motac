@@ -276,7 +276,7 @@
      * 80vh = 80% de la altura de la ventana. Ajusta este valor si es necesario.
      */
     height: 80vh; 
-    min-height: 600px; /* Un alto mínimo para pantallas más bajas */
+    min-height: 570px; /* Un alto mínimo para pantallas más bajas */
   }
   
   #hero-carousel .carousel-item img {
@@ -975,4 +975,7 @@ transform: none;
   }
 }
 
-
+.osteosintesisMainSection {
+  background-color: #f8f8f8; 
+  padding: 80px 25px 80px 25px;
+}
