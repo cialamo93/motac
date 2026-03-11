@@ -381,28 +381,23 @@
 
    @media (max-width: 768px) {
     #hero-carousel .carousel-item {
-      /* En lugar de dejar la altura en 'auto', le damos una altura fija especial para celulares. 
-       * Puedes ajustar este '350px' según qué tanto espacio quieras que ocupe en la pantalla del teléfono.
-       */
-      height: 350px !important; 
+      /* Reducimos la altura para que se asome el div de abajo, igual que en la original */
+      height: 250px !important; 
       min-height: unset !important;
     }
   
     #hero-carousel .carousel-item img {
       width: 100%;
-      height: 100%; /* Obligamos a la imagen a llenar esos 350px */
-      
-      /* ¡Adiós al 'contain'! Volvemos a usar 'cover' para que se comporte 
-       * igual que en escritorio: rellenando el espacio y recortando los lados.
-       */
+      height: 100%;
       object-fit: cover; 
       object-position: center top;
       display: block;
     }
     
-    /* Opcional: Ajustar el tamaño del texto en móviles para que no se desborde */
+    /* Ajustamos el tamaño del título para que quepa bien en esta caja más pequeña */
     #hero-carousel .carousel-caption h5 {
-      font-size: 1.8rem;
+      font-size: 1.4rem; /* Achicamos la letra para celulares */
+      width: 100%; /* Para que use todo el ancho disponible */
     }
   }
 
