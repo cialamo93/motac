@@ -417,6 +417,8 @@
     /* * Color de párrafo (Definido en tu CSS original como --color-texto-menu)
      */
     color: var(--color-texto-menu, #334155);
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   #about-content .lead {
