@@ -17,9 +17,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,600,700,900&subset=latin-ext&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,900&subset=latin-ext&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <header>
@@ -166,8 +167,12 @@
               <textarea class="form-control form-control-lg" placeholder="Mensaje" name="message" rows="5"></textarea>
             </div>
             
-            <div class="col-lg-2">
-              <button type="submit" class="btn btn-primary btn-lg w-100">Enviar</button>
+            <div class="col-12 mt-3 mb-2">
+              <div class="g-recaptcha" data-sitekey="6LcGa_orAAAAAABHwWtjGxbPq2WBKV3FCqs1zTyK"></div>
+            </div>
+            
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
             </div>
 
           </div> </form>
