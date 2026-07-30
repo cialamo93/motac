@@ -1,9 +1,5 @@
-/*
- * ESTILOS PARA EL NAVBAR (Header)
- * Esto replica el "look" de Elementor
- */
+/* Estilos de navegación y Header */
 
-/* 1. Variables */
 :root {
   --color-primario: #1cadd5;
   --color-texto-menu: #334155;
@@ -63,9 +59,8 @@ header {
   border-radius: 4px;
   padding: 10px 20px;
 }
-/* ============================================
-   🔵 1. Links principales del menú móvil
-   ============================================ */
+
+/* Menú móvil */
 .mobile-nav-links .nav-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -208,13 +203,6 @@ header {
 .collapse {
   width: 100%;
 }
-/* .offcanvas-body .nav-link,
-.offcanvas-body .nav-link:active,
-.offcanvas-body .nav-link:focus,
-.offcanvas-body .nav-link.show {
-  color: white !important;   o el color que uses
-  background: transparent !important;
-} */
 
 .lato-thin {
   font-family: "Lato", sans-serif;
@@ -274,10 +262,7 @@ header {
   font-family: "Lato", sans-serif;
   font-weight: 900;
   font-style: italic;
-}
-
-#hero-carousel .carousel-item {
-  /* Altura exacta de 570px correspondiente al Elementor original */
+}#hero-carousel .carousel-item {
   height: 570px;
   overflow: hidden;
 }
@@ -301,7 +286,6 @@ header {
 }
 
 #hero-carousel .carousel-caption {
-  /* 1. Centrado (Vertical y Horizontal) */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -325,7 +309,6 @@ header {
   height: 30px;
   border-radius: 90%;
 
-  /* Reseteos para anular Bootstrap */
   margin: 0 6px;
   border: none;
   background-color: #fff;
@@ -333,11 +316,9 @@ header {
 }
 
 .carousel-indicators .active {
-  /* * El círculo de la imagen que se está mostrando.
-     * Usamos el color primario que definimos en el CSS del header.
-     */
   background-color: var(--color-primario);
   opacity: 1;
+}1;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -404,18 +385,11 @@ header {
   justify-content: flex-end !important;
   padding-right: 20px !important;
   width: auto !important;
-}
-
-.section-bg-light {
-  /* * Este es el color de fondo gris pálido que usaba Elementor
-     * (Definido en tu CSS original como --ast-global-color-4) 
-     */
+}.section-bg-light {
   background-color: #f9fafb;
 }
 
 .lead {
-  /* * Color de párrafo (Definido en tu CSS original como --color-texto-menu)
-     */
   color: var(--color-texto-menu, #334155);
   font-size: 1rem;
   font-weight: 400;
@@ -428,10 +402,6 @@ header {
 }
 
 #quienes-somos {
-  /* * Prueba con 6rem (96px). 
-     * El original probablemente usa 100px, así que 6rem
-     * es un valor muy cercano. Ajusta si es necesario.
-     */
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
@@ -453,13 +423,11 @@ header {
 }
 
 .card-link .card {
-  /* La tarjeta en sí no necesita sombra por defecto */
   box-shadow: none;
   border: 1px solid #eee;
   transition: box-shadow 0.2s ease-in-out;
 }
 
-/* 1. Fondo de la Sección (Blanco) y Contenedor del Cuadro Azul */
 #clientes {
   background-color: #fff;
   position: relative;
@@ -470,9 +438,7 @@ header {
   position: absolute;
   z-index: 1;
 
-  /* Usa el color primario que definimos en el header */
   background-color: #b5e3ee;
-  ;
   left: 20%;
   right: 0;
   width: 80%;
@@ -528,7 +494,6 @@ header {
 }
 
 .footer-bg {
-  /* Este es el color de fondo oscuro del footer original */
   background-color: #fff;
   color: #8c8c8c;
 }
@@ -582,7 +547,6 @@ header {
   text-decoration: underline;
 }
 
-/* 1. Estilo del Hero Banner */
 .page-hero-banner {
   background-image: url('../img/BNA-QS.jpg');
   background-size: cover;
@@ -591,6 +555,7 @@ header {
   min-height: 320px;
   position: relative;
   overflow: hidden;
+}dden;
 }
 
 .page-hero-banner::before {
@@ -666,14 +631,12 @@ header {
   max-width: 550px;
   margin: 0 auto;
 
-  /* Centrado vertical y horizontal absoluto del texto dentro de la caja */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-/* 1. Imagen del Banner */
 .hero-insumos {
   background-image: url('../img/banner-productos-insumos.jpg');
   min-height: 450px;
@@ -682,7 +645,6 @@ header {
   background-size: cover;
 }
 
-/* 1. Imagen del Banner */
 .hero-osteosintesis {
   background-image: url('../img/osteosintesis.jpg');
   min-height: 450px;
@@ -691,7 +653,6 @@ header {
   background-size: cover;
 }
 
-/* 1. Imagen del Banner */
 .hero-protesis {
   background-image: url('../img/banner-productos-prote.jpg');
   min-height: 450px;
@@ -720,7 +681,6 @@ header {
   color: var(--color-texto-menu, #334155);
 }
 
-/* 1. Imagen del Banner */
 .hero-privado {
   background-image: url('../img/banner-privado.jpg');
   position: relative;
@@ -742,7 +702,6 @@ header {
   overflow: hidden;
 }
 
-/* 1. Imagen del Banner */
 .hero-contacto {
   background-image: url('../img/contacto-330.jpg');
 }
@@ -756,23 +715,8 @@ header {
   padding: .8rem 1.5rem;
 }
 
-/* Solo aplica esto en pantallas grandes (lg), no en el offcanvas móvil */
-/*
- * ---------------------------------------------
- * ARREGLOS FINALES DEL NAVBAR (Hover + Posición + Separadores)
- * ---------------------------------------------
- */
-
-/*
- * ---------------------------------------------
- * ARREGLOS FINALES DEL NAVBAR (Hover + Posición + Separadores)
- * ---------------------------------------------
- */
-
-/* Solo aplica esto en pantallas grandes (lg) */
 @media (min-width: 992px) {
 
-  /* B. Muestra el menú al pasar el mouse (hover) */
   #main-navbar .dropdown:hover>.dropdown-menu {
     display: block;
   }
@@ -806,8 +750,6 @@ header {
 }
 @media (min-width: 1200px) {
   #main-navbar .container {
-    /* El "boxed" de Elementor suele ser de 1200px o 1140px.
-       Bootstrap por defecto es más ancho. Esto lo "aprieta". */
     max-width: 1200px;
   }
 }
@@ -907,7 +849,6 @@ header {
   }
 }
 
-/* 1. Desktop Navbar Nav Links */
 #main-navbar .navbar-collapse .navbar-nav .nav-link {
   height: 100px !important;
   display: flex !important;
